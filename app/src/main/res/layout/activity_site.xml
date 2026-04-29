@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <Button
-        android:translationZ="11dp"
+        android:translationZ="10dp"
         android:id="@+id/Button"
         android:textSize="20sp"
         android:layout_width="wrap_content"
