@@ -1,34 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="?android:attr/windowBackground">
 
+    <EditText
+        android:id="@+id/mult_enter"
+        android:hint="Введите тикер компании"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:textAllCaps="true"
+        android:padding="12dp"
+        android:textColorHint="#FFD70080"
+        android:textColor="#FFD70080"
+        android:radius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/rounded_corners" />
 
     <Button
-        android:id="@+id/navButton"
-        android:textSize="20sp"
+        android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Перейти к Site_Activity"
-        android:onClick="onClick"
+        android:textSize="20dp"
+        android:text=" 🔍 "
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mult_enter"
+        android:background="@drawable/button" />
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/mult_enter"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/header"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:textColor="#FFFFFF"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/basic"
+                android:text="📊 Основные показатели:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBasic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/mults"
+                android:text="📊 Мультипликаторы:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+
+            <TextView
+                android:id="@+id/market_mults"
+                android:text="Рыночные:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMarket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/cap_mults"
+                android:text="Стоимости бизнеса:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/prof_eff_mults"
+                android:text="Рентабельности:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <TextView
+                android:id="@+id/gr_yield_marg"
+                android:text="Маржинальности:"
+                android:textSize="18sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProfEff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/gr_yield_cap_as"
+                android:text="Рентабельность капитала и активов:"
+                android:textSize="18sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGrYieldCap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/gr_yield_manag"
+                android:text="Эффективность работы менеджмента:"
+                android:textSize="18sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewManag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/helth_mults"
+                android:text="Финансового здоровья:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <TextView
+                android:id="@+id/liq"
+                android:text="Ликвидность (краткосрочная):"
+                android:textSize="18sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLiq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/debt_load"
+                android:text="Долговая нагрузка и платежеспособность (долгосрочная):"
+                android:textSize="18sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDebtLoad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/busines_turn"
+                android:text="Показатели деловой активности (оборачиваемости):"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBusinesTurn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/growth"
+                android:text="Показатели роста:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGrowth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/div"
+                android:text="Дивидендные показатели:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDiv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/yield"
+                android:text="Доходность для акционеров:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewYield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/comp_eval_mod"
+                android:text="Комплексные оценочные модели:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCompEvalMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/ind_risk"
+                android:text="Рыночные индикаторы риска:"
+                android:textSize="25sp"
+                style="@style/Block_style" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewRisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="200dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/footer_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
-
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
