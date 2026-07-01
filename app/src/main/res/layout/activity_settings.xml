@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/windowBackground">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1A1A1A"
+        app:title="Настройки"
+        app:titleTextColor="#FFD700"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Настройка темы -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Внешний вид"
+                android:textSize="18sp"
+                android:textColor="#FFD700"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#1A1A1A"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🌙 Тёмная тема"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Информация о пользователе -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Аккаунт"
+                android:textSize="18sp"
+                android:textColor="#FFD700"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#1A1A1A"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Имя: "
+                    android:textSize="14sp"
+                    android:textColor="#CCCCCC"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Режим: "
+                    android:textSize="14sp"
+                    android:textColor="#CCCCCC"/>
+            </LinearLayout>
+
+            <!-- О приложении -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="О приложении"
+                android:textSize="18sp"
+                android:textColor="#FFD700"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#1A1A1A"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Финансовый помощник"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Версия 1.0"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:layout_marginTop="4dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Данные предоставлены Yahoo Finance"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer будет добавлен в MainActivity -->
+</LinearLayout>

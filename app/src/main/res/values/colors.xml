@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gold">#FFD700</color>
+    <color name="dark_gold">#B8860B</color>
+    <color name="light_bg">#F5F5F5</color>
+    <color name="light_text">#333333</color>
+    <color name="dark_bg">#000000</color>
+    <color name="dark_text">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_card">#FFFFFF</color>
+    <color name="light_border">#DDDDDD</color>
+    <color name="dark_card">#1A1A1A</color>
+    <color name="dark_border">#333333</color>
 </resources>
